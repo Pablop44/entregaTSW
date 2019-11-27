@@ -113,12 +113,12 @@
                             <h5 class="tipo-archivo">Ficheros</h5>
                         </div>
                         <div class="row">          
-                            <div class="card fichero">
+                            <div *ngFor="let item of ficheros" class="card fichero">
                                 <div class="img-caja">
                                     <span class="fas fa-file-pdf icono-archivo"></span>
                                 </div>
                                 <div class="card-body caja-nombre-archivo">
-                                    <h6 class="card-title"><button class="btn" data-toggle="modal" data-target=""></button>Nombre</h6>
+                                    <h6 class="card-title"><button class="btn" data-toggle="modal" data-target=""></button>{{item.nombre}}</h6>
                                 </div>
                             </div>
 

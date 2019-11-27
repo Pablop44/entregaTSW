@@ -13,4 +13,10 @@ export class ApiService {
   public carpeta(a){
     return this.httpClient.get(`http://localhost/mvcblog/rest/carpeta/admin/`+a);
   }
+  public ficheroRaiz(){
+    return this.httpClient.get(`http://localhost/mvcblog/rest/carpeta/admin/fichero`);
+  }
+  public fichero(a){
+    return this.httpClient.get(`http://localhost/mvcblog/rest/carpeta/admin/fichero/`+a);
+  }
 }

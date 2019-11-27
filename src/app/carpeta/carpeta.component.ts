@@ -11,7 +11,8 @@ import { Route } from '@angular/compiler/src/core';
 export class CarpetaComponent implements OnInit {
   
   carpetas: any = [];
-  
+  ficheros: any = [];
+
   constructor(
     private servicioCarpeta: ApiService
     ) {
@@ -19,6 +20,7 @@ export class CarpetaComponent implements OnInit {
 
   ngOnInit() {
     this.carpetaRaiz();
+    this.ficherosRaiz();
   }
 
   carpetaRaiz(){
@@ -32,6 +34,17 @@ export class CarpetaComponent implements OnInit {
       );
   }
 
+  ficherosRaiz(){
+    this.servicioCarpeta.ficheroRaiz()
+    .subscribe(
+      response =>{
+        console.log(response);
+        this.ficheros = response;
+      },
+      error => {console.log(error);}
+    );
+  }
+
   carpeta(a){
     this.servicioCarpeta.carpeta(a)
       .subscribe(
@@ -42,10 +55,23 @@ export class CarpetaComponent implements OnInit {
         },
         error => {console.log(error);}
       );
+   
+  }
+
+  fichero(a){
+    this.servicioCarpeta.fichero(a)
+    .subscribe(
+      response =>{
+        console.log(response);
+        this.ficheros = response;
+      },
+      error => {console.log(error);}
+    );
   }
 
   cambiarRuta(a){
     this.carpeta(a);
+    this.fichero(a);
   }
 
 }
