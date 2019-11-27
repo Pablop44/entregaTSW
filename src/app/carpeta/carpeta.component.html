@@ -1,0 +1,153 @@
+<!--Elemento body de la página web-->
+    <div>
+      
+        <div class="row">
+            
+            <!--Elemento div de 2 columnas para las opciones-->
+            <div class="col-lg-2">
+                
+                <div class = "row">
+                    <button type="button" class="btn btn-primary dropbtn" data-toggle="modal" data-target="#exampleModalCenter">
+                        Nueva Carpeta
+                    </button>
+
+                    <!-- Modal -->
+                    <form name ='registrar' id="registrar" action='../Controllers/Carpeta_Controller.php?action=Add&padre=' method='post'>
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Nueva Carpeta</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-label-group">
+                                        <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre Carpeta" required>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                    <button type="submit" class="btn btn-primary">Crear Carpeta</button>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class = "row">
+                    <button type="button" class="btn btn-primary dropbtn" data-toggle="modal" data-target="#exampleModalCenter2">
+                        Nuevo Fichero
+                    </button>
+
+                    <!-- Modal -->
+                    <form enctype="multipart/form-data" name ='registrar' id="registrar" action='../Controllers/Carpeta_Controller.php?action=AddFichero&padre=' method='post'>
+                        <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Nuevo Fichero</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-label-group">
+                                        <input type="text" id="nombreFichero" name="nombreFichero" class="form-control" placeholder="" required>
+                                    </div>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" id="file" name="file" class="custom-file-input" id="inputGroupFile04">
+                                            <label class="custom-file-label" for="inputGroupFile04">Elige Archivo</label>
+                                        </div>
+                                    </div>                          
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                    <button type="submit" class="btn btn-primary">Subir Fichero</button>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+
+                <div class="row fila-opcion">
+                    <i class="fas fa-trash-alt icono-opcion"></i>
+                    <a href='../Controllers/Carpeta_Controller.php?action=EliminarCarpeta&padre=' class="opcion">Eliminar Carpeta</a>
+                </div>
+            </div>
+
+
+            
+            <!--Elemento div de 10 columnas para las carpetas y archivos-->
+            <div class="col-lg-10">
+                <div class="container-fluid">
+                    <div class="row contenedor-ruta">
+                        <p href="#" class="ruta">Carpeta Actual</p><span class="fas fa-chevron-right ruta2"></span><p href="#" class="ruta"></p>
+                    </div> 
+          
+                        <!--Título del apartado Carpetas-->
+                        
+                        <div  class="row">
+                            <h5 class="tipo-archivo">Carpetas</h5>
+                        </div>
+                        <div class="row">                 
+                            <div *ngFor="let item of carpetas" class="card carpeta">
+                                <a class="enlace_carpeta" (click)="cambiarRuta(item.uid)">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <i class="fas fa-folder icono-imagen2"></i>
+                                            <p class="texto-tarjeta">{{item.nombre}}</p>
+                                        </div>
+                                    </div>
+                                </a>    
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <h5 class="tipo-archivo">Ficheros</h5>
+                        </div>
+                        <div class="row">          
+                            <div class="card fichero">
+                                <div class="img-caja">
+                                    <span class="fas fa-file-pdf icono-archivo"></span>
+                                </div>
+                                <div class="card-body caja-nombre-archivo">
+                                    <h6 class="card-title"><button class="btn" data-toggle="modal" data-target=""></button>Nombre</h6>
+                                </div>
+                            </div>
+
+                            <!-- Modal de cada tarjeta de fichero-->
+                            <div class="modal fade" id="" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Nombre</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body contenedor-opciones-fichero">
+                                        <a class="enlace-opcion-fichero" >
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                        <a class="enlace-opcion-fichero" href="../Controllers/Carpeta_Controller.php?action=DescargarFichero&idFichero=">
+                                            <i class="fas fa-file-download"></i>
+                                        </a>   
+                                        <div>
+                                            <h6>DescargarFichero:</h6>
+                                            <p>localhost/Controllers/Carpeta_Controller.php?action=DescargarFichero2&idFichero=1</p>
+                                        </div>                 
+                                    </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div>                       
