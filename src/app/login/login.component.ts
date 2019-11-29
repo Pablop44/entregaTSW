@@ -1,23 +1,45 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
-
+import { User } from 'src/app/models/User';
+import { UsersService } from '../users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-
 export class LoginComponent implements OnInit {
 
-  constructor(
-    private servicioUsuario: ApiService
-  ) { }
+  formUser:User ={
+    username:null,
+    password:null
+  };
+
+  loginNotification:string ="";
+
+  usersService:UsersService;
+  
+  constructor(usersService:UsersService, private router : Router) { 
+    this.usersService = usersService;
+  }
 
   ngOnInit() {
+    
   }
 
-  login(){
-  }
+  onSubmit(){
+    this.usersService.login(this.formUser.username, this.formUser.password)
+      .subscribe(
+        response=>{
+          this.loginNotification = "";
+          this.usersService.setLoggedUser(this.formUser.username, this.formUser.password);
+          this.router.navigateByUrl("/carpeta/"+this.formUser.username);
 
+        },
+        error=>{
+          console.log(error);
+          this.loginNotification = error.error;
+        }
+      );
+  }
 }

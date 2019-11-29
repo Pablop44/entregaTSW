@@ -16,11 +16,8 @@
           <!--3 columnas para el botón de log out y el de cambio de idioma-->
           <div class="col-lg-3">
               <div class="float-right row">
-                  <div class="caja-logout">
-                      <a href="../Controllers/Carpeta_Controller.php?logout=Si" class="btn btn-primary btn-lg botonCabecera"></a>
- 
-              <!--Div que contiene los botones de cambio de idioma-->
-              </div>
+                    <div class="caja-logout">
+                    </div>
                   <form  class="formIdioma" name='idiomaform' action="../Functions/CambioIdioma.php" method="post">
                       <button type="submit" name="idioma" class="btn btn-primary btn-lg botonCabecera" value="SPANISH">ES</button>
                       <button type="submit" name="idioma" class="btn btn-primary btn-lg botonCabecera" value="ENGLISH">EN</button>
@@ -30,7 +27,7 @@
       </div>
   </div>
 </header>
-
+<app-nav></app-nav>
 <router-outlet></router-outlet>
 
 <footer class="page-footer font-small blue fixed-bottom">

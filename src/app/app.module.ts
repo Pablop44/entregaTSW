@@ -15,22 +15,26 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { CarpetaComponent } from './carpeta/carpeta.component';
 import { FicheroComponent } from './fichero/fichero.component';
+import { UsersService } from './users.service';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     CarpetaComponent,
-    FicheroComponent
+    FicheroComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 
-export class AppModule { }
+export class AppModule {
+ }
