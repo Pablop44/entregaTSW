@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Route } from '@angular/compiler/src/core';
+import { Carpeta } from '../models/Carpeta';
 
 @Component({
   selector: 'app-carpeta',
@@ -12,9 +13,11 @@ export class CarpetaComponent implements OnInit {
   
   carpetas: any = [];
   ficheros: any = [];
+  formCarpeta = new Carpeta();
 
   constructor(
-    private servicioCarpeta: ApiService
+    private servicioCarpeta: ApiService,
+    private router : Router
     ) {
      }
 
@@ -72,6 +75,16 @@ export class CarpetaComponent implements OnInit {
   cambiarRuta(a){
     this.carpeta(a);
     this.fichero(a);
+  }
+
+  
+
+  onSubmit(){
+    this.servicioCarpeta.addCarpeta(this.formCarpeta)
+      .subscribe(
+        response =>{console.log(response); this.router.navigateByUrl("/carpeta")},
+        error => {console.log(error)}
+      );
   }
 
 }

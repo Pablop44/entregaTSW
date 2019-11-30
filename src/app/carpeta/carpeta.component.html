@@ -12,7 +12,7 @@
                     </button>
 
                     <!-- Modal -->
-                    <form name ='registrar' id="registrar" action='../Controllers/Carpeta_Controller.php?action=Add&padre=' method='post'>
+                    <form (ngSubmit)="onSubmit()" #postForm="ngForm">
                         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="form-label-group">
-                                        <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre Carpeta" required>
+                                        <input type="text" class="form-control" id="nombre" name="nombre" required [(ngModel)]="formCarpeta.nombre" #inputTitle="ngModel">
                                     </div>
                                 </div>
                                 <div class="modal-footer">

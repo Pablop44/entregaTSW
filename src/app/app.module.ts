@@ -17,6 +17,7 @@ import { CarpetaComponent } from './carpeta/carpeta.component';
 import { FicheroComponent } from './fichero/fichero.component';
 import { UsersService } from './users.service';
 import { NavComponent } from './nav/nav.component';
+import { RegistroComponent } from './registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NavComponent } from './nav/nav.component';
     CarpetaComponent,
     FicheroComponent,
     NavComponent,
+    RegistroComponent,
   ],
   imports: [
     BrowserModule,

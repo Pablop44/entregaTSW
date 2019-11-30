@@ -4,6 +4,7 @@ import { User } from './models/User';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { headersToString } from 'selenium-webdriver/http';
 import {Router} from "@angular/router"
+import { UserRegistro } from './models/UserRegistro';
 
 @Injectable({
   providedIn: 'root'
@@ -59,6 +60,27 @@ export class UsersService {
     localStorage.removeItem("username");
     localStorage.removeItem("password");
     this.router.navigate(['/login'])
+  }
+
+  registro(username, password, nombre, appellidos, email, uso){
+    const httpOptions = {
+      headers: new HttpHeaders({ 
+        'Content-Type': 'application/json',
+      })
+    };
+    const userToSend : UserRegistro = {
+      username: username,
+      password: password,
+      nombre: nombre,
+      apellidos: appellidos,
+      email: email,
+      uso: uso
+    }
+
+    console.log(userToSend);
+
+    return this.http.post(this.restUrl+"/user", userToSend, httpOptions);
+
   }
   
 }
