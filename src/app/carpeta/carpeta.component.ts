@@ -77,12 +77,18 @@ export class CarpetaComponent implements OnInit {
     this.fichero(a);
   }
 
-  
-
   onSubmit(){
     this.servicioCarpeta.addCarpeta(this.formCarpeta)
       .subscribe(
-        response =>{console.log(response); this.router.navigateByUrl("/carpeta")},
+        response =>{console.log(response); this.carpetaRaiz()},
+        error => {console.log(error)}
+      );
+  }
+
+  deleteCarpeta(){
+    this.servicioCarpeta.deleteCarpeta()
+      .subscribe(
+        response =>{console.log(response); this.carpetaRaiz()},
         error => {console.log(error)}
       );
   }

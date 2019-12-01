@@ -49,13 +49,21 @@ export class ApiService {
 
   }
 
-  deleteCarpeta(CarpetaUid){
-    const httpOptions = {
-      headers: new HttpHeaders({ 
-        'Authorization': 'Basic ' + btoa(this.userService.loggedUser.username+':'+this.userService.loggedUser.password) })
-    };
-
-    return this.httpClient.delete(this.restUrl+"/carpeta/"+CarpetaUid, httpOptions);
+  deleteCarpeta(){
+    if(this.carpetaActual == "NULL"){
+      const httpOptions = {
+        headers: new HttpHeaders({ 
+          'Authorization': 'Basic ' + btoa(this.userService.loggedUser.username+':'+this.userService.loggedUser.password) })
+      };
+      return this.httpClient.delete(this.restUrl+"/carpeta/"+this.userService.loggedUser.username, httpOptions);
+    }else{
+      const httpOptions = {
+        headers: new HttpHeaders({ 
+          'Authorization': 'Basic ' + btoa(this.userService.loggedUser.username+':'+this.userService.loggedUser.password) })
+      };
+      return this.httpClient.delete(this.restUrl+"/carpeta/subfile/"+this.carpetaActual, httpOptions);
+    }
+    
   }
 
 }
