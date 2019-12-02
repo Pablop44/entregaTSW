@@ -30,7 +30,7 @@ export class RegistroComponent implements OnInit {
       .subscribe(
         response=>{
           this.loginNotification = "";
-          this.router.navigateByUrl("/login/"+this.formRegistro.username);
+          this.router.navigateByUrl("/login");
 
         },
         error=>{

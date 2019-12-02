@@ -8,8 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 // Routing module for router service
 import { AppRoutingModule } from './app-routing.module';
 
-// Forms module
-import { FormsModule } from '@angular/forms';
 
 // Components
 import { LoginComponent } from './login/login.component';
@@ -18,6 +16,7 @@ import { FicheroComponent } from './fichero/fichero.component';
 import { UsersService } from './users.service';
 import { NavComponent } from './nav/nav.component';
 import { RegistroComponent } from './registro/registro.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,6 +32,7 @@ import { RegistroComponent } from './registro/registro.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

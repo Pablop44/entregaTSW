@@ -3,6 +3,7 @@ import { ApiService } from '../api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Route } from '@angular/compiler/src/core';
 import { Carpeta } from '../models/Carpeta';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-carpeta',
@@ -14,14 +15,22 @@ export class CarpetaComponent implements OnInit {
   carpetas: any = [];
   ficheros: any = [];
   formCarpeta = new Carpeta();
+  formGroup: FormGroup;
 
   constructor(
     private servicioCarpeta: ApiService,
-    private router : Router
+    private router : Router,
+    private fb: FormBuilder
     ) {
+      
      }
 
   ngOnInit() {
+    this.formGroup = this.fb.group({
+      nombreFichero: [''],
+      labelfile:[''],
+      file:['']
+    })
     this.carpetaRaiz();
     this.ficherosRaiz();
   }
@@ -80,7 +89,7 @@ export class CarpetaComponent implements OnInit {
   onSubmit(){
     this.servicioCarpeta.addCarpeta(this.formCarpeta)
       .subscribe(
-        response =>{console.log(response); this.carpetaRaiz()},
+        response =>{console.log(response); this.carpetaRaiz(); this.ficherosRaiz();},
         error => {console.log(error)}
       );
   }
@@ -88,6 +97,27 @@ export class CarpetaComponent implements OnInit {
   deleteCarpeta(){
     this.servicioCarpeta.deleteCarpeta()
       .subscribe(
+        response =>{console.log(response); this.carpetaRaiz(); this.ficherosRaiz();},
+        error => {console.log(error)}
+      );
+  }
+
+  onSelectedFile(event) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      document.getElementById('labelfile').innerHTML = file.name;
+    }
+  }
+
+  enviarFile(){
+    const formData = new FormData();
+    formData.append("nombreFichero", this.formGroup.get('nombreFichero').value);
+    formData.append("file", this.formGroup.get('file').value);
+    console.log(this.formGroup.get('nombreFichero').value);
+    console.log(this.formGroup.get('file').value);
+    
+    this.servicioCarpeta.upload(formData).
+      subscribe(
         response =>{console.log(response); this.carpetaRaiz()},
         error => {console.log(error)}
       );

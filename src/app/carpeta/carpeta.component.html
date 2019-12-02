@@ -43,7 +43,7 @@
                     </button>
 
                     <!-- Modal -->
-                    <form enctype="multipart/form-data" name ='registrar' id="registrar" action='../Controllers/Carpeta_Controller.php?action=AddFichero&padre=' method='post'>
+                    <form (ngSubmit)="enviarFile()" [formGroup] = "formGroup">
                         <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
@@ -55,12 +55,12 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="form-label-group">
-                                        <input type="text" id="nombreFichero" name="nombreFichero" class="form-control" placeholder="" required>
+                                        <input type="text" name="nombreFichero" formControlName="nombreFichero" class="form-control" placeholder="Nombre Archivo" required>
                                     </div>
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input type="file" id="file" name="file" class="custom-file-input" id="inputGroupFile04">
-                                            <label class="custom-file-label" for="inputGroupFile04">Elige Archivo</label>
+                                            <input type="file" name="file" formControlName="file" class="custom-file-input" (change)="onSelectedFile($event)">
+                                            <label id="labelfile" name="labelfile" class="custom-file-label" for="inputGroupFile04">Elige Archivo</label>
                                         </div>
                                     </div>                          
                                 </div>

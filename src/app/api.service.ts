@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { UsersService } from './users.service';
 import { Carpeta } from 'src/app/models/Carpeta';
 import { Observable } from 'rxjs';
+import { Form, FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -64,6 +65,23 @@ export class ApiService {
       return this.httpClient.delete(this.restUrl+"/carpeta/subfile/"+this.carpetaActual, httpOptions);
     }
     
+  }
+
+
+  upload(formData: FormData) {
+
+    formData.append('padre', this.carpetaActual);
+
+    console.log(formData.get("nombreFichero"));
+
+    let params = new HttpParams();
+
+    const options = {
+      params: params,
+      reportProgress: true,
+    };
+
+    return this.httpClient.post<any>(this.restUrl+"/fichero",formData, options);
   }
 
 }
