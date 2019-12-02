@@ -71,6 +71,7 @@ export class ApiService {
   upload(formData: FormData) {
 
     formData.append('padre', this.carpetaActual);
+    formData.append('autor', this.userService.loggedUser.username);
 
     console.log(formData.get("nombreFichero"));
 
@@ -81,7 +82,7 @@ export class ApiService {
       reportProgress: true,
     };
 
-    return this.httpClient.post<any>(this.restUrl+"/fichero",formData, options);
+    return this.httpClient.post<any>(this.restUrl+"/fichero" ,formData, options);
   }
 
 }

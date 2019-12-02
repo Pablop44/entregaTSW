@@ -17,6 +17,7 @@ import { UsersService } from './users.service';
 import { NavComponent } from './nav/nav.component';
 import { RegistroComponent } from './registro/registro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [

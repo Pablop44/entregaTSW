@@ -113,12 +113,10 @@ export class CarpetaComponent implements OnInit {
     const formData = new FormData();
     formData.append("nombreFichero", this.formGroup.get('nombreFichero').value);
     formData.append("file", this.formGroup.get('file').value);
-    console.log(this.formGroup.get('nombreFichero').value);
-    console.log(this.formGroup.get('file').value);
     
     this.servicioCarpeta.upload(formData).
       subscribe(
-        response =>{console.log(response); this.carpetaRaiz()},
+        response =>{console.log(response); this.carpetaRaiz(); this.ficherosRaiz();},
         error => {console.log(error)}
       );
   }
