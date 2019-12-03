@@ -5,6 +5,7 @@
           <div class="card card-signin my-5">
             <div class="card-body">
               <h5 class="card-title text-center">Log in</h5>
+              
               <form class="form-signin" (ngSubmit)="onSubmit()" #loginForm="ngForm">
                 <div class="form-label-group">
                   <input type="text" id="username" name="username" class="form-control" placeholder="Usuario" [(ngModel)]="formUser.username" required autofocus>
@@ -15,12 +16,12 @@
                 <div class="custom-control custom-checkbox mb-3">
                   <input type="checkbox" class="custom-control-input" id="customCheck1">
                 </div>
-                <button (click)="carpetaRaiz()" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Log In</button>
+                <button type="submit" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Log In</button>
               </form>
               <div class="cajaTextoRegistrarse">
                 <label class="tagRegistrarse">¿No estás registrado?</label>
               </div>
-              
+
               <form class="form-signup" action='../Controllers/Register_Controller.php' method='post'>
                   <a href="/registro" class="btn btn-lg btn-primary btn-block text-uppercase form-signup">Registrarse</a>
               </form>

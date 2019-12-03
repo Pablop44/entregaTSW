@@ -88,7 +88,7 @@
             <div class="col-lg-10">
                 <div class="container-fluid">
                     <div class="row contenedor-ruta">
-                        <p href="#" class="ruta">Carpeta Actual</p><span class="fas fa-chevron-right ruta2"></span><p href="#" class="ruta"></p>
+                        <p href="#" class="ruta">Carpeta Actual</p><span class="fas fa-chevron-right ruta2"></span><p href="#" class="ruta">{{carpetaActual}}</p>
                     </div> 
           
                         <!--Título del apartado Carpetas-->
@@ -98,7 +98,7 @@
                         </div>
                         <div class="row">                 
                             <div *ngFor="let item of carpetas" class="card carpeta">
-                                <a class="enlace_carpeta" (click)="cambiarRuta(item.uid)">
+                                <a class="enlace_carpeta" (click)="cambiarRuta(item.uid, item.nombre)">
                                     <div class="card-body">
                                         <div class="row">
                                             <i class="fas fa-folder icono-imagen2"></i>
@@ -133,12 +133,8 @@
                                         </button>
                                     </div>
                                     <div class="modal-body contenedor-opciones-fichero">
-                                        <a class="enlace-opcion-fichero" >
-                                            <i class="fas fa-trash"></i>
-                                        </a>
-                                        <a class="enlace-opcion-fichero" href="../Controllers/Carpeta_Controller.php?action=DescargarFichero&idFichero=">
-                                            <i class="fas fa-file-download"></i>
-                                        </a>   
+                                        <button (click)="eliminarFichero(item.id)" class="enlace-opcion-fichero" data-dismiss="modal"><i class="fas fa-trash"></i></button>
+                                        <button (click)="descargarFichero(item.id)" class="enlace-opcion-fichero" data-dismiss="modal"><i class="fas fa-file-download"></i></button>
                                         <div>
                                             <h6>DescargarFichero:</h6>
                                             <p>localhost/Controllers/Carpeta_Controller.php?action=DescargarFichero2&idFichero=1</p>

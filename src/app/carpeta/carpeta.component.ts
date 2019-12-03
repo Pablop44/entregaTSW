@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Route } from '@angular/compiler/src/core';
 import { Carpeta } from '../models/Carpeta';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-carpeta',
@@ -16,13 +17,17 @@ export class CarpetaComponent implements OnInit {
   ficheros: any = [];
   formCarpeta = new Carpeta();
   formGroup: FormGroup;
+  usersService:UsersService;
+  carpetaActual: String = "Raíz";
 
   constructor(
+    usersService:UsersService,
     private servicioCarpeta: ApiService,
     private router : Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    
     ) {
-      
+      this.usersService = usersService;
      }
 
   ngOnInit() {
@@ -31,75 +36,106 @@ export class CarpetaComponent implements OnInit {
       labelfile:[''],
       file:['']
     })
-    this.carpetaRaiz();
-    this.ficherosRaiz();
+    if(!this.usersService.isLogged){
+      this.router.navigateByUrl("/login");
+    }else{
+      this.carpetaRaiz();
+      this.ficherosRaiz();
+    }
   }
 
   carpetaRaiz(){
+    if(!this.usersService.isLogged){
+      this.router.navigateByUrl("/login");
+    }else{
     this.servicioCarpeta.carpetaRaiz()
       .subscribe(
         response =>{
           console.log(response);
+          this.carpetaActual = "Raíz";
           this.carpetas = response;
         },
         error => {console.log(error);}
       );
+    }
   }
 
   ficherosRaiz(){
-    this.servicioCarpeta.ficheroRaiz()
-    .subscribe(
-      response =>{
-        console.log(response);
-        this.ficheros = response;
-      },
-      error => {console.log(error);}
-    );
-  }
-
-  carpeta(a){
-    this.servicioCarpeta.carpeta(a)
+    if(!this.usersService.isLogged){
+      this.router.navigateByUrl("/login");
+    }else{
+      this.servicioCarpeta.ficheroRaiz()
       .subscribe(
         response =>{
           console.log(response);
-          this.carpetas = response;
-          
+          this.ficheros = response;
         },
         error => {console.log(error);}
       );
-   
+    }
+  }
+
+  carpeta(a){
+    if(!this.usersService.isLogged){
+      this.router.navigateByUrl("/login");
+    }else{
+      this.servicioCarpeta.carpeta(a)
+        .subscribe(
+          response =>{
+            console.log(response);
+            this.carpetas = response;
+            
+          },
+          error => {console.log(error);}
+        );
+    }
   }
 
   fichero(a){
-    this.servicioCarpeta.fichero(a)
-    .subscribe(
-      response =>{
-        console.log(response);
-        this.ficheros = response;
-      },
-      error => {console.log(error);}
-    );
+    if(!this.usersService.isLogged){
+      this.router.navigateByUrl("/login");
+    }else{
+      this.servicioCarpeta.fichero(a)
+      .subscribe(
+        response =>{
+          console.log(response);
+          this.ficheros = response;
+        },
+        error => {console.log(error);}
+      );
+    }
   }
 
-  cambiarRuta(a){
+  cambiarRuta(a,b){
+    this.carpetaActual = b;
     this.carpeta(a);
     this.fichero(a);
   }
 
   onSubmit(){
-    this.servicioCarpeta.addCarpeta(this.formCarpeta)
-      .subscribe(
-        response =>{console.log(response); this.carpetaRaiz(); this.ficherosRaiz();},
-        error => {console.log(error)}
-      );
+    if(!this.usersService.isLogged){
+      this.router.navigateByUrl("/login");
+    }else{
+      this.servicioCarpeta.addCarpeta(this.formCarpeta)
+        .subscribe(
+          response =>{console.log(response); 
+            this.carpetaRaiz();
+            this.ficherosRaiz();},
+          error => {console.log(error)}
+        );
+    }
   }
 
   deleteCarpeta(){
-    this.servicioCarpeta.deleteCarpeta()
-      .subscribe(
-        response =>{console.log(response); this.carpetaRaiz(); this.ficherosRaiz();},
-        error => {console.log(error)}
-      );
+    if(!this.usersService.isLogged){
+      this.router.navigateByUrl("/login");
+    }else{
+      this.servicioCarpeta.deleteCarpeta()
+        .subscribe(
+          response =>{console.log(response); this.carpetaRaiz(); this.ficherosRaiz();},
+          error => {console.log(error)}
+        );
+    }
   }
 
   onSelectedFile(event) {
@@ -110,15 +146,44 @@ export class CarpetaComponent implements OnInit {
   }
 
   enviarFile(){
-    const formData = new FormData();
-    formData.append("nombreFichero", this.formGroup.get('nombreFichero').value);
-    formData.append("file", this.formGroup.get('file').value);
-    
-    this.servicioCarpeta.upload(formData).
+    if(!this.usersService.isLogged){
+      this.router.navigateByUrl("/login");
+    }else{
+      const formData = new FormData();
+      formData.append("nombreFichero", this.formGroup.get('nombreFichero').value);
+      formData.append("file", this.formGroup.get('file').value);
+      
+      this.servicioCarpeta.upload(formData).
+        subscribe(
+          response =>{console.log(response); this.carpetaRaiz(); this.ficherosRaiz();},
+          error => {console.log(error)}
+        );
+    }
+  }
+
+
+  eliminarFichero(a){
+    if(!this.usersService.isLogged){
+      this.router.navigateByUrl("/login");
+    }else{
+      this.servicioCarpeta.deleteFichero(a).
+        subscribe(
+          response =>{console.log(response); this.carpetaRaiz(); this.ficherosRaiz();},
+          error => {console.log(error)}
+        );
+    }
+  }
+
+  descargarFichero(a){
+    if(!this.usersService.isLogged){
+      this.router.navigateByUrl("/login");
+    }else{
+      this.servicioCarpeta.descargarFichero(a).
       subscribe(
         response =>{console.log(response); this.carpetaRaiz(); this.ficherosRaiz();},
         error => {console.log(error)}
       );
+    }
   }
 
 }

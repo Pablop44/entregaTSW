@@ -73,8 +73,6 @@ export class ApiService {
     formData.append('padre', this.carpetaActual);
     formData.append('autor', this.userService.loggedUser.username);
 
-    console.log(formData.get("nombreFichero"));
-
     let params = new HttpParams();
 
     const options = {
@@ -83,6 +81,22 @@ export class ApiService {
     };
 
     return this.httpClient.post<any>(this.restUrl+"/fichero" ,formData, options);
+  }
+
+  deleteFichero(a) {
+    const httpOptions = {
+      headers: new HttpHeaders({ 
+        'Authorization': 'Basic ' + btoa(this.userService.loggedUser.username+':'+this.userService.loggedUser.password) })
+    };
+    return this.httpClient.delete(this.restUrl+"/fichero/"+a, httpOptions);
+  }
+
+  descargarFichero(a) {
+    const httpOptions = {
+      headers: new HttpHeaders({ 
+        'Authorization': 'Basic ' + btoa(this.userService.loggedUser.username+':'+this.userService.loggedUser.password) })
+    };
+    return this.httpClient.post<any>(this.restUrl+"/fichero/"+a, httpOptions);
   }
 
 }
