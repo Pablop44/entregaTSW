@@ -22,10 +22,11 @@
 									<input type="text" id="email" name="email" class="form-control" placeholder="Correo Electrónico" [(ngModel)]="formRegistro.email"  required>
 								</div>
 								<div class="form-label-group">
+									Uso
 									<div class="input-select">
 										<div class="rs-select2 js-select-simple select--no-search">
 												<br> <select name="uso" id="uso" [(ngModel)]="formRegistro.uso">
-												<option selected="selected" value="vacio">¿Para que va a utilizar este Servicio?</option>
+												<option selected value="vacio">¿Para que va a utilizar este Servicio?</option>
 												<option value="profesional">Uso Profesional</option>
 												<option value="personal">Uso personal</option>
 												<option value="educativo">Uso educativo</option>
@@ -34,7 +35,8 @@
 											<div class="select-dropdown"></div>
 										</div>
                                     </div>
-                                </div>
+								</div>
+								
 
 							<div class="custom-control custom-checkbox mb-3">
 								<input type="checkbox" class="custom-control-input" id="customCheck1">
@@ -42,6 +44,13 @@
 							<button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Registrarme</button>
 
 						</form>
+						<br>
+							<p class="error" *ngIf="loginNotification!=''">{{loginNotification.login}} </p>
+							<p class="error" *ngIf="loginNotification!=''">{{loginNotification.password}} </p>
+							<p class="error" *ngIf="loginNotification!=''">{{loginNotification.nombre}} </p>
+							<p class="error" *ngIf="loginNotification!=''">{{loginNotification.apellidos}} </p>
+							<p class="error" *ngIf="loginNotification!=''">{{loginNotification.email}} </p>
+							<p class="error" *ngIf="loginNotification!=''">{{loginNotification.uso}} </p>
 					</div>
 				</div>
 			</div>

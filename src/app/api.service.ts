@@ -96,7 +96,7 @@ export class ApiService {
       headers: new HttpHeaders({ 
         'Authorization': 'Basic ' + btoa(this.userService.loggedUser.username+':'+this.userService.loggedUser.password) })
     };
-    return this.httpClient.post<any>(this.restUrl+"/fichero/"+a, httpOptions);
+    return this.httpClient.get(this.restUrl+"/fichero/"+a, httpOptions);
   }
 
 }

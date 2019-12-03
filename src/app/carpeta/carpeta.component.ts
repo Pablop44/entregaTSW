@@ -113,9 +113,6 @@ export class CarpetaComponent implements OnInit {
   }
 
   onSubmit(){
-    if(!this.usersService.isLogged){
-      this.router.navigateByUrl("/login");
-    }else{
       this.servicioCarpeta.addCarpeta(this.formCarpeta)
         .subscribe(
           response =>{console.log(response); 
@@ -123,19 +120,14 @@ export class CarpetaComponent implements OnInit {
             this.ficherosRaiz();},
           error => {console.log(error)}
         );
-    }
   }
 
   deleteCarpeta(){
-    if(!this.usersService.isLogged){
-      this.router.navigateByUrl("/login");
-    }else{
       this.servicioCarpeta.deleteCarpeta()
         .subscribe(
           response =>{console.log(response); this.carpetaRaiz(); this.ficherosRaiz();},
           error => {console.log(error)}
         );
-    }
   }
 
   onSelectedFile(event) {
@@ -146,9 +138,6 @@ export class CarpetaComponent implements OnInit {
   }
 
   enviarFile(){
-    if(!this.usersService.isLogged){
-      this.router.navigateByUrl("/login");
-    }else{
       const formData = new FormData();
       formData.append("nombreFichero", this.formGroup.get('nombreFichero').value);
       formData.append("file", this.formGroup.get('file').value);
@@ -156,9 +145,9 @@ export class CarpetaComponent implements OnInit {
       this.servicioCarpeta.upload(formData).
         subscribe(
           response =>{console.log(response); this.carpetaRaiz(); this.ficherosRaiz();},
-          error => {console.log(error)}
+          error => {console.log(error); this.carpetaRaiz(); this.ficherosRaiz();}
         );
-    }
+    
   }
 
 
@@ -175,15 +164,11 @@ export class CarpetaComponent implements OnInit {
   }
 
   descargarFichero(a){
-    if(!this.usersService.isLogged){
-      this.router.navigateByUrl("/login");
-    }else{
       this.servicioCarpeta.descargarFichero(a).
       subscribe(
         response =>{console.log(response); this.carpetaRaiz(); this.ficherosRaiz();},
         error => {console.log(error)}
       );
-    }
   }
 
 }

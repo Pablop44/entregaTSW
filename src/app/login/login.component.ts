@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
         },
         error=>{
           console.log(error);
-          this.loginNotification = error.error;
+          this.loginNotification = "Las credenciales no pueden ser vacías o son incorrectas";
         }
       );
   }
