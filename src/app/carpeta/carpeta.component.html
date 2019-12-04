@@ -7,7 +7,7 @@
             <div class="col-lg-2">
                 
                 <div class = "row">
-                    <button type="button" class="btn btn-primary dropbtn" data-toggle="modal" data-target="#exampleModalCenter">
+                    <button type="button" class="btn btn-primary dropbtn" data-toggle="modal" data-target="#exampleModalCenter" i18n>
                         Nueva Carpeta
                     </button>
 
@@ -17,7 +17,7 @@
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Nueva Carpeta</h5>
+                                    <h5 i18n class="modal-title" id="exampleModalLongTitle">Nueva Carpeta</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
@@ -28,8 +28,8 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                    <button type="submit" class="btn btn-primary" [attr.data-dismiss]="modal">Crear Carpeta</button>
+                                    <button i18n type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                    <button i18n type="submit" class="btn btn-primary">Crear Carpeta</button>
                                 </div>
                                 </div>
                             </div>
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class = "row">
-                    <button type="button" class="btn btn-primary dropbtn" data-toggle="modal" data-target="#exampleModalCenter2">
+                    <button i18n type="button" class="btn btn-primary dropbtn" data-toggle="modal" data-target="#exampleModalCenter2">
                         Nuevo Fichero
                     </button>
 
@@ -48,7 +48,7 @@
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Nuevo Fichero</h5>
+                                    <h5 i18n class="modal-title" id="exampleModalLongTitle">Nuevo Fichero</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
@@ -60,13 +60,13 @@
                                     <div class="input-group">
                                         <div class="custom-file">
                                             <input type="file" name="file" formControlName="file" class="custom-file-input" (change)="onSelectedFile($event)">
-                                            <label id="labelfile" name="labelfile" class="custom-file-label" for="inputGroupFile04">Elige Archivo</label>
+                                            <label i18n id="labelfile" name="labelfile" class="custom-file-label" for="inputGroupFile04">Elige Archivo</label>
                                         </div>
                                     </div>                          
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                    <button type="submit" class="btn btn-primary">Subir Fichero</button>
+                                    <button i18n type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                    <button i18n type="submit" class="btn btn-primary">Subir Fichero</button>
                                 </div>
                                 </div>
                             </div>
@@ -77,8 +77,8 @@
 
 
                 <div class="row fila-opcion">
-                    <i class="fas fa-trash-alt icono-opcion"></i>
-                    <button (click)="deleteCarpeta()" class="btn btn-danger" class="opcion">Eliminar Carpeta</button>
+                    
+                    <button i18n (click)="deleteCarpeta()" class="opcion btn btn-danger"><i class="fas fa-trash-alt"></i>Eliminar Carpeta {{carpetaActual}}</button>
                 </div>
             </div>
 
@@ -88,13 +88,13 @@
             <div class="col-lg-10">
                 <div class="container-fluid">
                     <div class="row contenedor-ruta">
-                        <p href="#" class="ruta">Carpeta Actual</p><span class="fas fa-chevron-right ruta2"></span><p href="#" class="ruta">{{carpetaActual}}</p>
+                        <p href="#" class="ruta" i18n>Carpeta Actual</p><span class="fas fa-chevron-right ruta2"></span><p href="#" class="ruta">{{carpetaActual}}</p>
                     </div> 
           
                         <!--Título del apartado Carpetas-->
                         
                         <div  class="row">
-                            <h5 class="tipo-archivo">Carpetas</h5>
+                            <h5 class="tipo-archivo" i18n>Carpetas</h5>
                         </div>
                         <div class="row">                 
                             <div *ngFor="let item of carpetas" class="card carpeta">
@@ -102,7 +102,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <i class="fas fa-folder icono-imagen2"></i>
-                                            <p class="texto-tarjeta">{{item.nombre}}</p>
+                                            <p i18n class="texto-tarjeta">{{item.nombre}}</p>
                                         </div>
                                     </div>
                                 </a>    
@@ -110,7 +110,7 @@
                         </div>
 
                         <div class="row">
-                            <h5 class="tipo-archivo">Ficheros</h5>
+                            <h5 class="tipo-archivo" i18n>Ficheros</h5>
                         </div>
                         <div class="row">          
                             <div *ngFor="let item of ficheros" class="card fichero">
@@ -136,7 +136,7 @@
                                         <button (click)="eliminarFichero(item.id)" class="enlace-opcion-fichero" data-dismiss="modal"><i class="fas fa-trash"></i></button>
                                         <button (click)="descargarFichero(item.id)" class="enlace-opcion-fichero" data-dismiss="modal"><i class="fas fa-file-download"></i></button>
                                         <div>
-                                            <h6>DescargarFichero:</h6>
+                                            <h6 i18n>DescargarFichero:</h6>
                                             <p>localhost/mvcblog/rest/fichero/{{item.id}}</p>
                                         </div>                 
                                     </div>

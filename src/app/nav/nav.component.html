@@ -1,15 +1,15 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div *ngIf="userService.isLogged" class="navbar-brand">Hello, {{userService.loggedUser.username}}</div>
+    <div *ngIf="userService.isLogged" class="navbar-brand">Hola, {{userService.loggedUser.username}}</div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li *ngIf="!userService.isLogged" class="nav-item active">
-                <a class="nav-link" routerLink="/login">Login </a>
+                <a class="nav-link" class="btn btn-primary" routerLink="/login">Login </a>
             </li>
             <li *ngIf="userService.isLogged" class="nav-item">
-                <button class="nav-link" (click)="logout()">Log out</button>
+                <button class="nav-link" class="btn btn-primary" (click)="logout()">Log out</button>
             </li>
         </ul>
     </div>

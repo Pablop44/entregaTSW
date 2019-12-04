@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="00c13a3c835ded90d107113eeabd680976bd99f1" datatype="html">
+        <source>
+                        Nueva Carpeta
+                    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1a4c55a8f368dd55b1fef885689f7e188f363bef" datatype="html">
+        <source>Nueva Carpeta</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0acf4e0f9350f920b529a38364281d337c54edfd" datatype="html">
+        <source>Cerrar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5bda10411f5395a44c664f62b102ae0003bd7d61" datatype="html">
+        <source>Crear Carpeta</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ac4feae44ded540eac6dfbf0a3fdfcd7f26dbeb2" datatype="html">
+        <source>
+                        Nuevo Fichero
+                    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ff0aef9c2c0e0b33215366bed986e388c49f2004" datatype="html">
+        <source>Nuevo Fichero</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="82ed79309295ca53101bffc36bbcddc3e10406b8" datatype="html">
+        <source>Elige Archivo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7522384b2cec6a0e6b49a1b8c526fabc2ef0b064" datatype="html">
+        <source>Subir Fichero</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="93605d61fbd5fd4ed01ebce23d7993726a9a1a81" datatype="html">
+        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>Eliminar Carpeta <x id="INTERPOLATION" equiv-text="{{carpetaActual}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="edf2eadaaa90c3b918bfea5b95dc813c194e692b" datatype="html">
+        <source>Carpeta Actual</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b7de008b8d70be3b7c2f13f22ce1d394b3dfab09" datatype="html">
+        <source>Carpetas</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5be6d87ef483aa5c26b3a92cfe7c60b0e3490877" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{item.nombre}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3edd3a5dbedb52342d30e83277a676d64d00e7c7" datatype="html">
+        <source>Ficheros</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
+          <context context-type="linenumber">113</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5e97f28468ec7e20154bfcdeaa29ff60e12d7032" datatype="html">
+        <source>DescargarFichero:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
+          <context context-type="linenumber">139</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -34,7 +34,7 @@ export class CarpetaComponent implements OnInit {
     this.formGroup = this.fb.group({
       nombreFichero: [''],
       labelfile:[''],
-      file:['']
+      file:[null]
     })
     if(!this.usersService.isLogged){
       this.router.navigateByUrl("/login");
@@ -134,6 +134,7 @@ export class CarpetaComponent implements OnInit {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
       document.getElementById('labelfile').innerHTML = file.name;
+      this.formGroup.get('file').setValue(file);
     }
   }
 
@@ -147,7 +148,6 @@ export class CarpetaComponent implements OnInit {
           response =>{console.log(response); this.carpetaRaiz(); this.ficherosRaiz();},
           error => {console.log(error); this.carpetaRaiz(); this.ficherosRaiz();}
         );
-    
   }
 
 
