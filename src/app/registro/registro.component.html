@@ -4,7 +4,7 @@
 			<div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
 				<div class="card card-signin my-5">
 					<div class="card-body">
-						<h5 class="card-title text-center">Registro</h5>
+						<h5 i18n class="card-title text-center">Registro</h5>
 						<form class="form-signin" (ngSubmit)="onSubmit()" #loginForm="ngForm">
 								<div class="form-label-group">
 									<input type="text" id="username" name="username" class="form-control" placeholder="Usuario" [(ngModel)]="formRegistro.username" required autofocus>	
@@ -26,11 +26,11 @@
 									<div class="input-select">
 										<div class="rs-select2 js-select-simple select--no-search">
 												<br> <select name="uso" id="uso" [(ngModel)]="formRegistro.uso">
-												<option selected value="vacio">¿Para que va a utilizar este Servicio?</option>
-												<option value="profesional">Uso Profesional</option>
-												<option value="personal">Uso personal</option>
-												<option value="educativo">Uso educativo</option>
-												<option value="otro">Otro</option>
+												<option i18n selected value="vacio">¿Para que va a utilizar este Servicio?</option>
+												<option i18n value="profesional">Uso Profesional</option>
+												<option i18n value="personal">Uso personal</option>
+												<option i18n value="educativo">Uso educativo</option>
+												<option i18n value="otro">Otro</option>
 											</select>
 											<div class="select-dropdown"></div>
 										</div>
@@ -41,7 +41,7 @@
 							<div class="custom-control custom-checkbox mb-3">
 								<input type="checkbox" class="custom-control-input" id="customCheck1">
 							</div>
-							<button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Registrarme</button>
+							<button i18n class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Registrarme</button>
 
 						</form>
 						<br>
