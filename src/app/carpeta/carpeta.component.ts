@@ -164,11 +164,14 @@ export class CarpetaComponent implements OnInit {
   }
 
   descargarFichero(a){
+    window.open("http://localhost/mvcblog/rest/fichero/"+a);
+    /*
       this.servicioCarpeta.descargarFichero(a).
       subscribe(
         response =>{console.log(response); this.carpetaRaiz(); this.ficherosRaiz();},
         error => {console.log(error)}
       );
+    */
   }
 
 }
