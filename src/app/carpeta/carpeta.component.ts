@@ -118,7 +118,7 @@ export class CarpetaComponent implements OnInit {
           response =>{console.log(response); 
             this.carpetaRaiz();
             this.ficherosRaiz();},
-          error => {console.log(error)}
+          error => {console.log(error);this.carpetaRaiz(); this.ficherosRaiz();}
         );
   }
 
@@ -128,6 +128,11 @@ export class CarpetaComponent implements OnInit {
           response =>{console.log(response); this.carpetaRaiz(); this.ficherosRaiz();},
           error => {console.log(error)}
         );
+  }
+
+  volverCarpeta(){
+    this.carpetaRaiz();
+    this.ficherosRaiz();  
   }
 
   onSelectedFile(event) {
