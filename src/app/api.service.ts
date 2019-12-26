@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { UsersService } from './users.service';
 import { Carpeta } from 'src/app/models/Carpeta';
+import { v4 as uuid } from 'uuid';
 import { Observable } from 'rxjs';
 import { Form, FormGroup } from '@angular/forms';
 
@@ -67,7 +68,6 @@ export class ApiService {
     
   }
 
-
   upload(formData: FormData) {
 
     formData.append('padre', this.carpetaActual);
@@ -78,7 +78,10 @@ export class ApiService {
     const options = {
       params: params,
       reportProgress: true,
+      headers: new HttpHeaders({'Authorization': 'Basic ' + btoa(this.userService.loggedUser.username+':'+this.userService.loggedUser.password) })
     };
+
+    
 
     return this.httpClient.post<any>(this.restUrl+"/fichero" ,formData, options);
   }
@@ -92,11 +95,7 @@ export class ApiService {
   }
 
   descargarFichero(a) {
-    const httpOptions = {
-      headers: new HttpHeaders({ 
-        'Authorization': 'Basic ' + btoa(this.userService.loggedUser.username+':'+this.userService.loggedUser.password) })
-    };
-    return this.httpClient.get(this.restUrl+"/fichero/"+a, httpOptions);
+    return this.httpClient.get(this.restUrl+"/fichero/"+a);
   }
 
 }

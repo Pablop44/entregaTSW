@@ -5,6 +5,7 @@ import { Route } from '@angular/compiler/src/core';
 import { Carpeta } from '../models/Carpeta';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { UsersService } from '../users.service';
+import { v4 as uuid } from 'uuid';
 
 @Component({
   selector: 'app-carpeta',
@@ -19,6 +20,8 @@ export class CarpetaComponent implements OnInit {
   formGroup: FormGroup;
   usersService:UsersService;
   carpetaActual: String = "Raíz";
+  public list: string[] = [];
+  uuid: string;
 
   constructor(
     usersService:UsersService,
@@ -179,4 +182,7 @@ export class CarpetaComponent implements OnInit {
     */
   }
 
+  public gen() {
+    this.uuid = uuid();
+  }
 }
