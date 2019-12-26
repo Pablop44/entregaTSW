@@ -52,7 +52,13 @@
                   "maximumError": "5mb"
                 }
               ]
-            }
+            },
+            "es": {
+              "i18nFile": "./messages.es.xlf",
+              "i18nLocale": "es",
+              "i18nFormat": "xlf",
+              "aot": true
+              }
           }
         },
         "serve": {
@@ -63,6 +69,9 @@
           "configurations": {
             "production": {
               "browserTarget": "entregaTSW:build:production"
+            },
+            "es":{
+              "browserTarget": "entregaTSW:build:es"
             }
           }
         },

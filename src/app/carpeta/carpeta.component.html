@@ -106,7 +106,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <i class="fas fa-folder icono-imagen2"></i>
-                                            <p i18n class="texto-tarjeta">{{item.nombre}}</p>
+                                            <p class="texto-tarjeta">{{item.nombre}}</p>
                                         </div>
                                     </div>
                                 </a>    
@@ -140,7 +140,7 @@
                                         <button (click)="eliminarFichero(item.id)" class="enlace-opcion-fichero" data-dismiss="modal"><i class="fas fa-trash"></i></button>
                                         <button (click)="descargarFichero(item.id)" class="enlace-opcion-fichero" data-dismiss="modal"><i class="fas fa-file-download"></i></button>
                                         <div>
-                                            <h6 i18n>DescargarFichero:</h6>
+                                            <h6 i18n>Descargar Fichero:</h6>
                                             <p>localhost/mvcblog/rest/fichero/{{uuid}}</p>
                                         </div>                 
                                     </div>

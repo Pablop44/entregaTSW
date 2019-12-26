@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" datatype="plaintext" original="ng2.template">
+  <file source-language="es" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="f093d9574ab746b231504bd2cbb65f04bd7b00db" datatype="html">
         <source>Log in</source>
+        <target>Log in</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/login/login.component.html</context>
           <context context-type="linenumber">7</context>
@@ -11,6 +12,7 @@
       </trans-unit>
       <trans-unit id="dcd47f4d6b26b045a1b041b2fc73123bc0cfc118" datatype="html">
         <source>Log In</source>
+        <target>Log In</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/login/login.component.html</context>
           <context context-type="linenumber">19</context>
@@ -18,6 +20,7 @@
       </trans-unit>
       <trans-unit id="056858fc7bd152375fea7d18092dbbd8b524da62" datatype="html">
         <source>¿No estás registrado?</source>
+        <target>Are you not registered?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/login/login.component.html</context>
           <context context-type="linenumber">22</context>
@@ -25,15 +28,15 @@
       </trans-unit>
       <trans-unit id="28c0f4e51cd46c99c0eb24ace953b810f9392691" datatype="html">
         <source>Registrarse</source>
+        <target>Sign In</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/login/login.component.html</context>
           <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="00c13a3c835ded90d107113eeabd680976bd99f1" datatype="html">
-        <source>
-                        Nueva Carpeta
-                    </source>
+        <source>Nueva Carpeta</source>
+        <target>New Folder</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
           <context context-type="linenumber">10</context>
@@ -41,6 +44,7 @@
       </trans-unit>
       <trans-unit id="1a4c55a8f368dd55b1fef885689f7e188f363bef" datatype="html">
         <source>Nueva Carpeta</source>
+        <target>New Folder</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
           <context context-type="linenumber">20</context>
@@ -48,6 +52,7 @@
       </trans-unit>
       <trans-unit id="0acf4e0f9350f920b529a38364281d337c54edfd" datatype="html">
         <source>Cerrar</source>
+        <target>Close</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
           <context context-type="linenumber">31</context>
@@ -59,15 +64,15 @@
       </trans-unit>
       <trans-unit id="5bda10411f5395a44c664f62b102ae0003bd7d61" datatype="html">
         <source>Crear Carpeta</source>
+        <target>Create Folder</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
           <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ac4feae44ded540eac6dfbf0a3fdfcd7f26dbeb2" datatype="html">
-        <source>
-                        Nuevo Fichero
-                    </source>
+        <source>Nuevo Fichero</source>
+        <target>New File</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
           <context context-type="linenumber">41</context>
@@ -75,6 +80,7 @@
       </trans-unit>
       <trans-unit id="ff0aef9c2c0e0b33215366bed986e388c49f2004" datatype="html">
         <source>Nuevo Fichero</source>
+        <target>New File</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
           <context context-type="linenumber">51</context>
@@ -82,6 +88,7 @@
       </trans-unit>
       <trans-unit id="82ed79309295ca53101bffc36bbcddc3e10406b8" datatype="html">
         <source>Elige Archivo</source>
+        <target>Choose one File</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
           <context context-type="linenumber">63</context>
@@ -89,15 +96,15 @@
       </trans-unit>
       <trans-unit id="7522384b2cec6a0e6b49a1b8c526fabc2ef0b064" datatype="html">
         <source>Subir Fichero</source>
+        <target>Upload File</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
           <context context-type="linenumber">69</context>
         </context-group>
       </trans-unit>
       <trans-unit id="98bdf86552c45cc9e5eef03f7c5f20a979023b1b" datatype="html">
-        <source>
-                        Ir a carpeta Raiz
-                    </source>
+        <source>Ir a carpeta Raiz</source>
+        <target>Root Folder</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
           <context context-type="linenumber">78</context>
@@ -105,6 +112,7 @@
       </trans-unit>
       <trans-unit id="93605d61fbd5fd4ed01ebce23d7993726a9a1a81" datatype="html">
         <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>Eliminar Carpeta <x id="INTERPOLATION" equiv-text="{{carpetaActual}}"/></source>
+        <target>Delete Folder</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
           <context context-type="linenumber">85</context>
@@ -112,6 +120,7 @@
       </trans-unit>
       <trans-unit id="edf2eadaaa90c3b918bfea5b95dc813c194e692b" datatype="html">
         <source>Carpeta Actual</source>
+        <target>Current Folder</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
           <context context-type="linenumber">95</context>
@@ -119,6 +128,7 @@
       </trans-unit>
       <trans-unit id="b7de008b8d70be3b7c2f13f22ce1d394b3dfab09" datatype="html">
         <source>Carpetas</source>
+        <target>Folders</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
           <context context-type="linenumber">101</context>
@@ -126,6 +136,7 @@
       </trans-unit>
       <trans-unit id="3edd3a5dbedb52342d30e83277a676d64d00e7c7" datatype="html">
         <source>Ficheros</source>
+        <target>Files</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
           <context context-type="linenumber">117</context>
@@ -133,6 +144,7 @@
       </trans-unit>
       <trans-unit id="59bac61fca141e5560315de2678dedbd9b92c66f" datatype="html">
         <source>Descargar Fichero:</source>
+        <target>Download file</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/carpeta/carpeta.component.html</context>
           <context context-type="linenumber">143</context>
@@ -140,6 +152,7 @@
       </trans-unit>
       <trans-unit id="d11db38e9e51afee8c26613101216e2b5964c363" datatype="html">
         <source>Hola, <x id="INTERPOLATION" equiv-text="{{userService.loggedUser.username}}"/></source>
+        <target>Hello, </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/nav/nav.component.html</context>
           <context context-type="linenumber">2</context>
@@ -147,6 +160,7 @@
       </trans-unit>
       <trans-unit id="f80e0b014d3d295901bb642ff981aaa5d52a97e8" datatype="html">
         <source>Login </source>
+        <target>Login </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/nav/nav.component.html</context>
           <context context-type="linenumber">9</context>
@@ -154,6 +168,7 @@
       </trans-unit>
       <trans-unit id="3fdc751b264ca9998e1542fcf5794e274cd56344" datatype="html">
         <source>Log out</source>
+        <target>Log out </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/nav/nav.component.html</context>
           <context context-type="linenumber">12</context>
@@ -161,6 +176,7 @@
       </trans-unit>
       <trans-unit id="cf04f7c4d68523426a322308a940acf7a2d09b29" datatype="html">
         <source>Registro</source>
+        <target>Register</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/registro/registro.component.html</context>
           <context context-type="linenumber">7</context>
@@ -168,6 +184,7 @@
       </trans-unit>
       <trans-unit id="5a57b127133008d3be4261bd5d1fea89a393d503" datatype="html">
         <source>¿Para que va a utilizar este Servicio?</source>
+        <target>¿What is the service for?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/registro/registro.component.html</context>
           <context context-type="linenumber">29</context>
@@ -175,6 +192,7 @@
       </trans-unit>
       <trans-unit id="83dae5e183931d6129674a0ab7b5fcae8ab70880" datatype="html">
         <source>Uso Profesional</source>
+        <target>Profesional use</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/registro/registro.component.html</context>
           <context context-type="linenumber">30</context>
@@ -182,6 +200,7 @@
       </trans-unit>
       <trans-unit id="1ceca4c417cdf5783ad2206c160548d30c82a513" datatype="html">
         <source>Uso personal</source>
+        <target>Personal use</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/registro/registro.component.html</context>
           <context context-type="linenumber">31</context>
@@ -189,6 +208,7 @@
       </trans-unit>
       <trans-unit id="0bdaea7a0cd052fee8457602fae4d7574a4a2c6c" datatype="html">
         <source>Uso educativo</source>
+        <target>Educative use</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/registro/registro.component.html</context>
           <context context-type="linenumber">32</context>
@@ -196,6 +216,7 @@
       </trans-unit>
       <trans-unit id="2c897a893aa9a9877e22ff0968d5a401f042d97d" datatype="html">
         <source>Otro</source>
+        <target>Other</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/registro/registro.component.html</context>
           <context context-type="linenumber">33</context>
@@ -203,6 +224,7 @@
       </trans-unit>
       <trans-unit id="98a1dae65ea16ede65f4072e45dfb825ca1bf52f" datatype="html">
         <source>Registrarme</source>
+        <target>Sign up</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/registro/registro.component.html</context>
           <context context-type="linenumber">44</context>
