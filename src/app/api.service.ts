@@ -98,4 +98,19 @@ export class ApiService {
     return this.httpClient.get(this.restUrl+"/fichero/"+a);
   }
 
+  modificarDescargable(event, id){
+    const httpOptions = {
+      headers: new HttpHeaders({ 
+        'Content-Type': 'application/json',
+        'Authorization': 'Basic ' + btoa(this.userService.loggedUser.username+':'+this.userService.loggedUser.password) })
+    };
+
+    var Info = JSON.stringify({"descargable": event, "id": id});
+
+    console.log(Info);
+    console.log(this.restUrl+"/fichero/"+id);
+
+    return this.httpClient.post(this.restUrl+"/fichero/descargable", Info, httpOptions);
+  }
+
 }

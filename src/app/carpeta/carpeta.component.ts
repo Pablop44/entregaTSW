@@ -185,4 +185,13 @@ export class CarpetaComponent implements OnInit {
   public gen() {
     this.uuid = uuid();
   }
+
+
+  checkValue(event: any, id){
+    this.servicioCarpeta.modificarDescargable(event, id).
+        subscribe(
+          response =>{console.log(response)},
+          error => {console.log(error)}
+        );
+ }
 }

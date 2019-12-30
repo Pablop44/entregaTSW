@@ -139,9 +139,15 @@
                                     <div class="modal-body contenedor-opciones-fichero">
                                         <button (click)="eliminarFichero(item.id)" class="enlace-opcion-fichero" data-dismiss="modal"><i class="fas fa-trash"></i></button>
                                         <button (click)="descargarFichero(item.id)" class="enlace-opcion-fichero" data-dismiss="modal"><i class="fas fa-file-download"></i></button>
-                                        <div>
+                                        <br>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1" [(ngModel)]="isChecked" (change)="checkValue(isChecked?'si':'no', item.id)">
+                                            <label class="custom-control-label" for="customSwitch1">Descarga de fichero por otra persona no loggeada</label>
+                                        </div>
+                                        <br>
+                                        <div *ngIf="isChecked">
                                             <h6 i18n>Descargar Fichero:</h6>
-                                            <p>localhost/mvcblog/rest/fichero/{{uuid}}</p>
+                                            <p>localhost/mvcblog/rest/fichero/descargable/{{item.id}}</p>
                                         </div>                 
                                     </div>
                                     </div>
