@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-nav',
@@ -10,15 +11,14 @@ export class NavComponent implements OnInit {
 
   userService: UsersService;
 
-  constructor(userService : UsersService) { 
+  constructor(userService : UsersService, private servicioCarpeta: ApiService,) { 
       this.userService = userService;
   }
-
   ngOnInit() {
   }
 
   logout(){
     this.userService.logout();
   }
-
+  
 }

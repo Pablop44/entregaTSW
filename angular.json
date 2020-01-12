@@ -70,7 +70,7 @@
             "production": {
               "browserTarget": "entregaTSW:build:production"
             },
-            "es":{
+            "en":{
               "browserTarget": "entregaTSW:build:es"
             }
           }

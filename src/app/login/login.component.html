@@ -1,29 +1,31 @@
+  <button i18n class="nav-link" class="btn btn-primary dropbtn" (click)="cambiarIdioma('es')">{{cadenas.Espanol}}</button>
+  <button i18n class="nav-link" class="btn btn-primary dropbtn" (click)="cambiarIdioma('en')">{{cadenas.Ingles}}</button>
 <body>
     <div class="container">
       <div class="row">
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
           <div class="card card-signin my-5">
             <div class="card-body">
-              <h5 i18n class="card-title text-center">Log in</h5>
+              <h5 i18n class="card-title text-center">{{cadenas.Log_in}}</h5>
               
               <form class="form-signin" (ngSubmit)="onSubmit()" #loginForm="ngForm">
                 <div class="form-label-group">
-                  <input type="text" id="username" name="username" class="form-control" placeholder="Usuario" [(ngModel)]="formUser.username" required autofocus>
+                  <input type="text" id="username" name="username" class="form-control" placeholder="{{cadenas.Usuario}}" [(ngModel)]="formUser.username" required autofocus>
                 </div>
                 <div class="form-label-group">
-                  <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" [(ngModel)]="formUser.password" required>
+                  <input type="password" id="password" name="password" class="form-control" placeholder="{{cadenas.Contrasena}}" [(ngModel)]="formUser.password" required>
                 </div>
                 <div class="custom-control custom-checkbox mb-3">
                   <input type="checkbox" class="custom-control-input" id="customCheck1">
                 </div>
-                <button i18n type="submit" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Log In</button>
+                <button i18n type="submit" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">{{cadenas.Log_in}}</button>
               </form>
               <div class="cajaTextoRegistrarse">
-                <label i18n class="tagRegistrarse">¿No estás registrado?</label>
+                <label i18n class="tagRegistrarse">{{cadenas.No_estas_registrado}}</label>
               </div>
 
               <form class="form-signup" action='../Controllers/Register_Controller.php' method='post'>
-                  <a i18n href="/registro" class="btn btn-lg btn-primary btn-block text-uppercase form-signup">Registrarse</a>
+                  <a i18n href="/registro" class="btn btn-lg btn-primary btn-block text-uppercase form-signup">{{cadenas.Registrarse}}</a>
               </form>
               <p *ngIf="loginNotification!=''">Error: {{loginNotification}} </p>
             </div>

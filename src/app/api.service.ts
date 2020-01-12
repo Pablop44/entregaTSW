@@ -113,4 +113,15 @@ export class ApiService {
     return this.httpClient.post(this.restUrl+"/fichero/descargable", Info, httpOptions);
   }
 
+
+  cambiarIdioma(a) {
+    return this.httpClient.get(this.restUrl+"/idioma/"+a);
+  }
+
+  idioma() {
+    return this.httpClient.get(this.restUrl+"/idioma");
+  }
+
+  
+
 }

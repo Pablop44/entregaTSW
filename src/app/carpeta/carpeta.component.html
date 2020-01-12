@@ -1,14 +1,21 @@
 <!--Elemento body de la página web-->
-    <div>
       
         <div class="row">
             
             <!--Elemento div de 2 columnas para las opciones-->
             <div class="col-lg-2">
-                
+                <br>
+                <div class = "row">
+                    <button i18n class="nav-link" class="btn btn-primary dropbtn" (click)="cambiarIdioma('es')">{{cadenas.Espanol}}</button>
+                </div>
+                <div class = "row">
+                    <button i18n class="nav-link" class="btn btn-primary dropbtn" (click)="cambiarIdioma('en')">{{cadenas.Ingles}}</button>
+                </div>
+                <br>
+                <br>
                 <div class = "row">
                     <button type="button" class="btn btn-primary dropbtn" data-toggle="modal" data-target="#exampleModalCenter" i18n>
-                        Nueva Carpeta
+                        {{cadenas.Nueva_Carpeta}}
                     </button>
 
                     <!-- Modal -->
@@ -17,7 +24,7 @@
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 i18n class="modal-title" id="exampleModalLongTitle">Nueva Carpeta</h5>
+                                    <h5 i18n class="modal-title" id="exampleModalLongTitle">{{cadenas.Nueva_Carpeta}}</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
@@ -28,8 +35,8 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button i18n type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                    <button i18n type="submit" class="btn btn-primary">Crear Carpeta</button>
+                                    <button i18n type="button" class="btn btn-secondary" data-dismiss="modal">{{cadenas.Cerrar}}</button>
+                                    <button i18n type="submit" class="btn btn-primary">{{cadenas.Crear_Carpeta}}</button>
                                 </div>
                                 </div>
                             </div>
@@ -39,7 +46,7 @@
 
                 <div class = "row">
                     <button i18n type="button" class="btn btn-primary dropbtn" data-toggle="modal" data-target="#exampleModalCenter2">
-                        Nuevo Fichero
+                        {{cadenas.Nuevo_Fichero}}
                     </button>
 
                     <!-- Modal -->
@@ -48,25 +55,25 @@
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 i18n class="modal-title" id="exampleModalLongTitle">Nuevo Fichero</h5>
+                                    <h5 i18n class="modal-title" id="exampleModalLongTitle">{{cadenas.Nuevo_Fichero}}</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
                                     <div class="form-label-group">
-                                        <input type="text" name="nombreFichero" formControlName="nombreFichero" class="form-control" placeholder="Nombre Archivo" required>
+                                        <input type="text" name="nombreFichero" formControlName="nombreFichero" class="form-control" placeholder="{{cadenas.Nombre_Fichero}}" required>
                                     </div>
                                     <div class="input-group">
                                         <div class="custom-file">
                                             <input type="file" name="file" formControlName="file" class="custom-file-input" (change)="onSelectedFile($event)">
-                                            <label i18n id="labelfile" name="labelfile" class="custom-file-label" for="inputGroupFile04">Elige Archivo</label>
+                                            <label i18n id="labelfile" name="labelfile" class="custom-file-label" for="inputGroupFile04">{{cadenas.Elige_Archivo}}</label>
                                         </div>
                                     </div>                          
                                 </div>
                                 <div class="modal-footer">
-                                    <button i18n type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                    <button i18n type="submit" class="btn btn-primary">Subir Fichero</button>
+                                    <button i18n type="button" class="btn btn-secondary" data-dismiss="modal">{{cadenas.Cerrar}}</button>
+                                    <button i18n type="submit" class="btn btn-primary">{{cadenas.Subir_Fichero}}</button>
                                 </div>
                                 </div>
                             </div>
@@ -76,13 +83,13 @@
 
                 <div class = "row">
                     <button i18n type="button" class="btn btn-primary dropbtn" (click)="volverCarpeta()">
-                        Ir a carpeta Raiz
+                        {{cadenas.Ir_a_carpeta_raiz}}
                     </button>
                 </div>
 
                 <div class="row fila-opcion">
                     
-                    <button i18n (click)="deleteCarpeta()" class="opcion btn btn-danger"><i class="fas fa-trash-alt"></i>Eliminar Carpeta {{carpetaActual}}</button>
+                    <button i18n (click)="deleteCarpeta()" class="opcion btn btn-danger"><i class="fas fa-trash-alt"></i>{{cadenas.Eliminar_Carpeta}} {{carpetaActual}}</button>
                 </div>
             </div>
 
@@ -92,13 +99,13 @@
             <div class="col-lg-10">
                 <div class="container-fluid">
                     <div class="row contenedor-ruta">
-                        <p href="#" class="ruta" i18n>Carpeta Actual</p><span class="fas fa-chevron-right ruta2"></span><p href="#" class="ruta">{{carpetaActual}}</p>
+                        <p href="#" class="ruta" i18n> {{cadenas.Carpeta_Actual}}</p><span class="fas fa-chevron-right ruta2"></span><p href="#" class="ruta">{{carpetaActual}}</p>
                     </div> 
           
                         <!--Título del apartado Carpetas-->
                         
                         <div  class="row">
-                            <h5 class="tipo-archivo" i18n>Carpetas</h5>
+                            <h5 class="tipo-archivo" i18n>{{cadenas.Carpetas}}</h5>
                         </div>
                         <div class="row">                 
                             <div *ngFor="let item of carpetas" class="card carpeta">
@@ -114,7 +121,7 @@
                         </div>
 
                         <div class="row">
-                            <h5 class="tipo-archivo" i18n>Ficheros</h5>
+                            <h5 class="tipo-archivo" i18n>{{cadenas.Ficheros}}</h5>
                         </div>
                         <div class="row">          
                             <div *ngFor="let item of ficheros" class="card fichero">
@@ -142,11 +149,11 @@
                                         <br>
                                         <div class="custom-control custom-switch">
                                             <input type="checkbox" class="custom-control-input" id="customSwitch1" [(ngModel)]="isChecked" (change)="checkValue(isChecked?'si':'no', item.id)">
-                                            <label class="custom-control-label" for="customSwitch1">Descarga de fichero por otra persona no loggeada</label>
+                                            <label class="custom-control-label" for="customSwitch1">{{cadenas.Descarga_de_fichero_por_otra_persona_no_loggeada}}</label>
                                         </div>
                                         <br>
                                         <div *ngIf="isChecked">
-                                            <h6 i18n>Descargar Fichero:</h6>
+                                            <h6 i18n>{{cadenas.Descargar_Fichero}}:</h6>
                                             <p>localhost/mvcblog/rest/fichero/descargable/{{item.uuid}}</p>
                                         </div>                 
                                     </div>

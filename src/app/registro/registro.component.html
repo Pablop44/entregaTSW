@@ -1,36 +1,38 @@
+<button i18n class="nav-link" class="btn btn-primary dropbtn" (click)="cambiarIdioma('es')">{{cadenas.Espanol}}</button>
+<button i18n class="nav-link" class="btn btn-primary dropbtn" (click)="cambiarIdioma('en')">{{cadenas.Ingles}}</button>
 <body>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
 				<div class="card card-signin my-5">
 					<div class="card-body">
-						<h5 i18n class="card-title text-center">Registro</h5>
+						<h5 i18n class="card-title text-center">{{cadenas.Registro}}</h5>
 						<form class="form-signin" (ngSubmit)="onSubmit()" #loginForm="ngForm">
 								<div class="form-label-group">
-									<input type="text" id="username" name="username" class="form-control" placeholder="Usuario" [(ngModel)]="formRegistro.username" required autofocus>	
+									<input type="text" id="username" name="username" class="form-control" placeholder="{{cadenas.Usuario}}" [(ngModel)]="formRegistro.username" required autofocus>	
 								</div>
 								<div class="form-label-group">
-									 <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" [(ngModel)]="formRegistro.password" required autofocus>	
+									 <input type="password" id="password" name="password" class="form-control" placeholder="{{cadenas.Contrasena}}" [(ngModel)]="formRegistro.password" required autofocus>	
 								</div>
 								<div class="form-label-group">
-									<input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" [(ngModel)]="formRegistro.nombre" required autofocus>
+									<input type="text" id="nombre" name="nombre" class="form-control" placeholder="{{cadenas.Nombre}}" [(ngModel)]="formRegistro.nombre" required autofocus>
 								</div>
 								<div class="form-label-group">
-									<input type="text" id="apellidos" name="apellidos" class="form-control" placeholder="Apellidos" [(ngModel)]="formRegistro.apellidos" required autofocus>	
+									<input type="text" id="apellidos" name="apellidos" class="form-control" placeholder="{{cadenas.Apellidos}}" [(ngModel)]="formRegistro.apellidos" required autofocus>	
 								</div>
 								<div class="form-label-group">
-									<input type="text" id="email" name="email" class="form-control" placeholder="Correo Electrónico" [(ngModel)]="formRegistro.email"  required>
+									<input type="text" id="email" name="email" class="form-control" placeholder="{{cadenas.Correo_Electronico}}" [(ngModel)]="formRegistro.email"  required>
 								</div>
 								<div class="form-label-group">
-									Uso
+									{{cadenas.Uso}}
 									<div class="input-select">
 										<div class="rs-select2 js-select-simple select--no-search">
 												<br> <select name="uso" id="uso" [(ngModel)]="formRegistro.uso">
-												<option i18n selected value="vacio">¿Para que va a utilizar este Servicio?</option>
-												<option i18n value="profesional">Uso Profesional</option>
-												<option i18n value="personal">Uso personal</option>
-												<option i18n value="educativo">Uso educativo</option>
-												<option i18n value="otro">Otro</option>
+												<option i18n selected value="vacio">{{cadenas.Para_que_va_a_utilizar_este_servicio}}</option>
+												<option i18n value="profesional">{{cadenas.Uso_profesional}}</option>
+												<option i18n value="personal">{{cadenas.Uso_personal}}</option>
+												<option i18n value="educativo">{{cadenas.Uso_educativo}}</option>
+												<option i18n value="otro">{{cadenas.Otro}}</option>
 											</select>
 											<div class="select-dropdown"></div>
 										</div>
@@ -41,7 +43,7 @@
 							<div class="custom-control custom-checkbox mb-3">
 								<input type="checkbox" class="custom-control-input" id="customCheck1">
 							</div>
-							<button i18n class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Registrarme</button>
+							<button i18n class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">{{cadenas.Registrarme}}</button>
 
 						</form>
 						<br>

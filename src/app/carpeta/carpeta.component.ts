@@ -19,9 +19,11 @@ export class CarpetaComponent implements OnInit {
   formCarpeta = new Carpeta();
   formGroup: FormGroup;
   usersService:UsersService;
+  idiomaActual: any = [];
   carpetaActual: String = "Raíz";
   public list: string[] = [];
   uuid: string;
+  cadenas: any = [];
 
   constructor(
     usersService:UsersService,
@@ -34,6 +36,7 @@ export class CarpetaComponent implements OnInit {
      }
 
   ngOnInit() {
+    
     this.formGroup = this.fb.group({
       nombreFichero: [''],
       labelfile:[''],
@@ -45,6 +48,7 @@ export class CarpetaComponent implements OnInit {
       this.carpetaRaiz();
       this.ficherosRaiz();
     }
+    this.cambiarIdioma('es');
   }
 
   carpetaRaiz(){
@@ -188,5 +192,15 @@ export class CarpetaComponent implements OnInit {
           response =>{console.log(response)},
           error => {console.log(error)}
         );
- }
+  }
+
+  cambiarIdioma(valor){
+    this.idiomaActual = valor;
+    console.log(valor);
+    this.servicioCarpeta.cambiarIdioma(valor).
+        subscribe(
+          response =>{console.log(response), this.cadenas = response;},
+          error => {console.log(error)}
+        );
+  }
 }
